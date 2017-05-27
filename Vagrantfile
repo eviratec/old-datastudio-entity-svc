@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
     apt-get -y install mysql-server mysql-client
 
     echo "===== IMPORTING DATA ====="
-    mysql -h localhost -u root -p3ntitysvc entitysvc < /vagrant/db-mysql-5-5.sql
+    mysql -h localhost -u root -p3ntitysvc < /vagrant/db-mysql-5-5.sql
     mysql -h localhost -u root -p3ntitysvc entitysvc < /vagrant/db-mysql-5-5-example.sql
 
     echo "====== NGINX SET-UP ======"

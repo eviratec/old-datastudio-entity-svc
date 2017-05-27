@@ -14,19 +14,27 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-CREATE TABLE `Entities` (
+CREATE DATABASE `entitysvc`
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
+CREATE TABLE `entitysvc`.`Entities` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `TypeID` int(11) NOT NULL,
+  `AppID` int(11) DEFAULT NULL,
   `UserID` int(11) NOT NULL,
+  `TypeID` int(11) NOT NULL,
   `Created` datetime NOT NULL,
   `Deleted` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`),
+  KEY `AppUserTypeID` (`AppID`,`UserID`,`TypeID`),
+  KEY `AppUserID` (`AppID`,`UserID`),
+  KEY `AppTypeID` (`AppID`,`TypeID`),
+  KEY `AppID` (`AppID`),
   KEY `TypeID` (`TypeID`),
-  KEY `UserID` (`UserID`),
-  KEY `UserTypeID` (`UserID`,`TypeID`)
+  KEY `UserID` (`UserID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1118891 DEFAULT CHARSET=utf8;
 
-CREATE TABLE `EntityAttributes` (
+CREATE TABLE `entitysvc`.`EntityAttributes` (
   `EntityID` int(11) NOT NULL,
   `AttributeKey` varchar(64) NOT NULL,
   `AttributeValue` varchar(255) DEFAULT NULL,
@@ -37,8 +45,9 @@ CREATE TABLE `EntityAttributes` (
   KEY `AttributeID` (`EntityID`,`AttributeKey`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `EntityTypes` (
+CREATE TABLE `entitysvc`.`EntityTypes` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `AppID` int(11) DEFAULT NULL,
   `UserID` int(11) NOT NULL,
   `ParentID` int(11) DEFAULT NULL,
   `ClassName` varchar(45) DEFAULT NULL,
@@ -48,12 +57,14 @@ CREATE TABLE `EntityTypes` (
   `Modified` datetime DEFAULT NULL,
   `Deleted` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`),
+  KEY `AppID` (`AppID`),
   KEY `UserID` (`UserID`),
   KEY `ParentID` (`ParentID`),
-  KEY `UserClassType` (`UserID`,`ClassName`)
+  KEY `UserClassType` (`UserID`,`ClassName`),
+  KEY `AppUserClassType` (`AppID`,`UserID`,`ClassName`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1878803 DEFAULT CHARSET=utf8;
 
-CREATE TABLE `TypeAttributes` (
+CREATE TABLE `entitysvc`.`TypeAttributes` (
   `TypeID` int(11) NOT NULL,
   `AttributeKey` varchar(64) NOT NULL,
   `Label` varchar(255) DEFAULT NULL,

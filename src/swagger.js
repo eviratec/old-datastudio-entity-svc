@@ -17,15 +17,14 @@
 
 const SWAGGER_VERSION = '2.0';
 const API_VERSION = '1.0.0';
-const API_TITLE = '3XQT Entity API';
-const API_URL = '3XQT Entity API';
-const API_SCHEMES = ['http', 'https'];
-const API_HOST = 'localhost:5002'
+const API_TITLE = 'DS Entity REST API';
+const API_URL = 'DS Entity REST API';
+const API_SCHEMES = ['http'];
+const API_HOST = '192.168.220.31'
 const API_CONSUMES = ['application/json'];
 const API_PRODUCES = ['application/json'];
 const API_DESCRIPTION =
-  '[eviratec.com.au](https://www.eviratec.com.au)' +
-  ' / [3xqt.co](http://www.3xqt.co)';
+  '[eviratec.com.au](https://www.eviratec.com.au)';
 
 module.exports = function (thing) {
 

@@ -1,9 +1,9 @@
-# Eviratec Entity Service
+# Data Studio Entity Service
 
-[![Dependency Status](https://david-dm.org/eviratec/entity-svc/status.svg)](https://david-dm.org/eviratec/entity-svc)
-[![devDependency Status](https://david-dm.org/eviratec/entity-svc/dev-status.svg)](https://david-dm.org/eviratec/entity-svc#info=devDependencies)
+[![Dependency Status](https://david-dm.org/data-studio/entity-svc/status.svg)](https://david-dm.org/data-studio/entity-svc)
+[![devDependency Status](https://david-dm.org/data-studio/entity-svc/dev-status.svg)](https://david-dm.org/data-studio/entity-svc#info=devDependencies)
 
-This repository contains the source for the Eviratec Entity (micro)service.
+This repository contains the source for the Data Studio Entity Service.
 
 ## Routes
 
@@ -23,19 +23,18 @@ This repository contains the source for the Eviratec Entity (micro)service.
 | PUT | /U/{UserID}/T/{ClassName}/E/{EntityID}/A/{AttributeKey} | updateEntityAttributeByAttributeKey |
 | DELETE | /U/{UserID}/T/{ClassName}/E/{EntityID}/A/{AttributeKey} | deleteEntityAttributeByAttributeKey |
 
-## Env
+## Getting started
 
-### Requirements
-
-* Eviratec core db *coming soon*
-
-### Set up
-
-1. `$ npm install`
-2. `$ export EV_MYSQL_USER=root`
-3. `$ export EV_MYSQL_PASS=*****`
-4. `$ export EV_MYSQL_DB=eviratec`
-5. `$ npm start`
+1. Clone this repository
+```shell
+$ git clone https://github.com/data-studio/entity-svc.git && cd entity-svc
+```
+2. Install [Vagrant](https://www.vagrantup.com/) by [HashiCorp](https://www.hashicorp.com/)
+3. Start the Vagrant development VM
+```shell
+$ vagrant up
+```
+4. Direct your browser to [http://192.168.220.31](http://192.168.220.31)
 
 ## License
 

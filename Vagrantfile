@@ -48,9 +48,8 @@ Vagrant.configure("2") do |config|
     npm install
     npm ln -s
 
-    cd ~
-
     echo "==== STARTING SERVICE ===="
-    nohup /usr/local/lib/node/bin/entity-svc &
+    ./bin/entity-svc
+
   SHELL
 end

@@ -34,7 +34,7 @@ $ git clone https://github.com/data-studio/entity-svc.git && cd entity-svc
 ```shell
 $ vagrant up
 ```
-4. Direct your browser to [http://192.168.220.31](http://192.168.220.31)
+4. Direct your browser to [http://192.168.220.31/swagger.yml](http://192.168.220.31/swagger.yml)
 
 ## License
 

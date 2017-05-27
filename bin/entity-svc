@@ -33,13 +33,25 @@ app.use(function(req, res, next) {
 
 const pkg = JSON.parse(fs.readFileSync(__dirname + '/../package.json'));
 
-writeOut(`eviratec/entity-svc@v${pkg.version}`);
+writeOut(`data-studio/entity-svc@v${pkg.version}`);
 writeOut(`Copyright (c) 2017 Callan Peter Milne`);
+writeOut(``);
+writeOut(`Permission to use, copy, modify, and/or distribute this software for any`);
+writeOut(`purpose with or without fee is hereby granted, provided that the above`);
+writeOut(`copyright notice and this permission notice appear in all copies.`);
+writeOut(``);
+writeOut(`THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH`);
+writeOut(`REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY`);
+writeOut(`AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,`);
+writeOut(`INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM`);
+writeOut(`LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR`);
+writeOut(`OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR`);
+writeOut(`PERFORMANCE OF THIS SOFTWARE.`);
 
 require('../routes')(app);
 
-app.listen(5002, function () {
-  writeOut(`Web service listening on port 5002`);
+app.listen(3000, function () {
+  writeOut(`Web service listening on port 3000`);
 });
 
 function writeOut (msg) {

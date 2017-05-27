@@ -19,9 +19,9 @@ const knex = require('knex')({
   client: 'mysql',
   connection: {
     socketPath: '/run/mysqld/mysqld.sock',
-    user: process.env.EV_MYSQL_USER,
-    password: process.env.EV_MYSQL_PASS,
-    database: process.env.EV_MYSQL_DB,
+    user: 'root',
+    password: '3ntitysvc',
+    database: 'entitysvc',
   }
 });
 
